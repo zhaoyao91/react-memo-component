@@ -14,6 +14,7 @@ npm install --save react-memo-component
 
 ```tsx
 import Memo from "react-memo-component";
+// import { Memo } from "react-memo-component"; // or
 
 <Memo
   deps={[dep1, dep2, ...]}
