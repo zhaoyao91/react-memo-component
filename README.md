@@ -6,6 +6,10 @@
 npm install --save react-memo-component
 ```
 
+## Example
+
+[example](https://zhaoyao91.github.io/react-memo-component/)
+
 ## Usage
 
 ```tsx
