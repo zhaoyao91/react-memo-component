@@ -1,8 +1,8 @@
 # re-memo
 
-> 
+>
 
-[![NPM](https://img.shields.io/npm/v/re-memo.svg)](https://www.npmjs.com/package/re-memo) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/re-memo.svg)](https://www.npmjs.com/package/re-memo)
 
 ## Install
 
@@ -13,19 +13,24 @@ npm install --save re-memo
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import Memo from "re-memo";
 
-import MyComponent from 're-memo'
-
-class Example extends React.Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
+<Memo
+  deps={[dep1, dep2, ...]}
+  render={([dep1, dep2, ...]) => <div>...</div>}
+/>
 ```
+
+## Props
+
+- deps?: any
+> Any deps of the component, common format is an array of items.
+- compare?: (prevDeps, nextDeps) => boolean
+> Function used to compare the deps. If snapshots of deps are different, rerender will be triggered.
+> By default, shallow-equal algorithm will be used if `compare` is not specified.
+- render?: (deps) => ReactElement
+- children?: (deps) => ReactElement
 
 ## License
 
-MIT © [](https://github.com/)
+MIT
