@@ -1,6 +1,6 @@
 {
   "name": "react-memo-component",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "React Memo component of render-props pattern",
   "author": "zhaoyao91",
   "license": "MIT",
