@@ -1,10 +1,10 @@
 {
   "name": "re-memo",
-  "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "version": "0.0.0",
+  "description": "React Memo component of render-props pattern",
+  "author": "zhaoyao91",
   "license": "MIT",
-  "repository": "/re-memo",
+  "repository": "https://github.com/zhaoyao91/re-memo",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -21,7 +21,9 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "shallowequal": "^1.1.0"
+  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
@@ -32,6 +34,7 @@
     "@types/jest": "^23.1.5",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
+    "@types/shallowequal": "^1.1.1",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",

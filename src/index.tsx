@@ -1,23 +1,32 @@
-/**
- * @class ExampleComponent
- */
+import { FC, memo, ReactElement } from "react";
+import shallowEqual from "shallowequal";
 
-import * as React from 'react'
+type Deps = any;
 
-import styles from './styles.css'
+export type Props = {
+  deps?: Deps;
+  compare?: (prevDeps: any, nextDeps: any) => boolean;
+  render?: (deps: Deps) => ReactElement | null;
+  children?: (deps: Deps) => ReactElement | null;
+};
 
-export type Props = { text: string }
+const compareProps = (prevProps: Props, nextProps: Props) => {
+  const compareDeps = nextProps.compare || shallowEqual;
+  return compareDeps(prevProps.deps, nextProps.deps);
+};
 
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
+const Memo: FC<Props> = memo(({ deps, render, children }) => {
+  if (!render) {
+    render = children;
   }
-}
+
+  if (!render) {
+    throw TypeError(
+      "At least one of `render` or `children` prop should be specified"
+    );
+  }
+
+  return render(deps);
+}, compareProps);
+
+export default Memo;
