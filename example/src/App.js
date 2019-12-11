@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Memo from "re-memo";
+import Memo from "react-memo-component";
 
 export default function() {
   return (

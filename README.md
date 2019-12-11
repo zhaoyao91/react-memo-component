@@ -1,19 +1,15 @@
-# re-memo
-
->
-
-[![NPM](https://img.shields.io/npm/v/re-memo.svg)](https://www.npmjs.com/package/re-memo)
+# React Memo Component
 
 ## Install
 
 ```bash
-npm install --save re-memo
+npm install --save react-memo-component
 ```
 
 ## Usage
 
 ```tsx
-import Memo from "re-memo";
+import Memo from "react-memo-component";
 
 <Memo
   deps={[dep1, dep2, ...]}

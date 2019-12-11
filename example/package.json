@@ -1,6 +1,6 @@
 {
-  "name": "re-memo-example",
-  "homepage": "https://.github.io/re-memo",
+  "name": "react-memo-component-example",
+  "homepage": "https://.github.io/react-memo-component",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "re-memo": "file:.."
+    "react-memo-component": "file:.."
   },
   "scripts": {
     "start": "react-scripts start",
