@@ -1,32 +1,32 @@
-import { FC, memo, ReactElement } from "react";
+import { memo, ReactElement } from "react";
 import shallowEqual from "shallowequal";
 
-type Deps = any;
-
-export type Props = {
-  deps?: Deps;
-  compare?: (prevDeps: any, nextDeps: any) => boolean;
-  render?: (deps: Deps) => ReactElement | null;
-  children?: (deps: Deps) => ReactElement | null;
+export interface Props<DepProps>{
+	deps?: DepProps;
+	compare?: (prevDeps: DepProps, nextDeps: DepProps) => boolean;
+	render?: (deps: DepProps) => ReactElement | null;
+	children?: (deps: DepProps) => ReactElement | null;
 };
 
-const compareProps = (prevProps: Props, nextProps: Props) => {
-  const compareDeps = nextProps.compare || shallowEqual;
-  return compareDeps(prevProps.deps, nextProps.deps);
+function compareProps<T>(prevProps: Props<T>, nextProps: Props<T>) {
+	const compareDeps = nextProps.compare || shallowEqual;
+	return compareDeps(prevProps.deps!, nextProps.deps!);
 };
 
-const Memo: FC<Props> = memo(({ deps, render, children }) => {
-  if (!render) {
-    render = children;
-  }
+type MemoType = <T>(props: Props<T>) => ReactElement | null;
 
-  if (!render) {
-    throw TypeError(
-      "At least one of `render` or `children` prop should be specified"
-    );
-  }
+export const Memo: MemoType = memo(MemoComp, compareProps);
 
-  return render(deps);
-}, compareProps);
+function MemoComp<T>({ deps, render, children }:Props<T>){
+	if (!render) {
+		render = children;
+	}
 
-export default Memo;
+	if (!render) {
+		throw TypeError(
+			"At least one of `render` or `children` prop should be specified"
+		);
+	}
+
+	return render(deps!);
+}
