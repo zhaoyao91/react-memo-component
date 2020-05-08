@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@changesets/cli": "^2.6.5",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-info": "^5.3.18",
