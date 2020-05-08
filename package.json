@@ -1,5 +1,6 @@
 {
   "name": "react-memo-component",
+  "description": "React memorization with render children pattern.",
   "version": "0.0.1",
   "module": "dist/react-memo-component.esm.js",
   "main": "dist/index.js",
@@ -50,6 +51,7 @@
     "@storybook/react": "^5.3.18",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
+    "@types/shallowequal": "^1.1.1",
     "babel-loader": "^8.1.0",
     "husky": "^4.2.5",
     "react": "^16.13.1",
@@ -60,5 +62,8 @@
     "tsdx": "^0.13.2",
     "tslib": "^1.11.2",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "shallowequal": "^1.1.0"
   }
 }
