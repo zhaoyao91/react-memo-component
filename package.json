@@ -10,9 +10,6 @@
     "dist",
     "src"
   ],
-  "engines": {
-    "node": ">=12"
-  },
   "author": "zhaoyao91",
   "repository": {
     "url": "https://github.com/zhaoyao91/react-memo-component"
@@ -23,7 +20,7 @@
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "fix": "tsdx lint --fix",
-    "prepare": "tsdx build",
+    "prepublishOnly": "tsdx build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
