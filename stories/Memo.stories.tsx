@@ -38,3 +38,21 @@ export const Default = () => {
     </div>
   );
 };
+
+export const UseHooksInsideRender = () => {
+  const [count1, setCount1] = useState(0);
+  return (
+    <Memo
+      deps={[count1]}
+      render={() => {
+        const [count2, setCount2] = useState(0);
+        return (
+          <div>
+            <p onClick={() => setCount1(x => x + 1)}>outer count {count1}</p>
+            <p onClick={() => setCount2(x => x + 1)}>inner count {count2}</p>
+          </div>
+        );
+      }}
+    />
+  );
+};

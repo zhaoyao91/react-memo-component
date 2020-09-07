@@ -23,7 +23,7 @@ const compareProps = <TDeps extends any>(
 
 type MemoType = <TDeps>(props: Props<TDeps>) => ReactElement | null;
 
-const MemorizedMemo: MemoType = memo(function Memo({ deps, render, children }) {
+const Memo: MemoType = memo(function Memo({ deps, render, children }) {
   render = render ?? children;
 
   if (!render) {
@@ -35,4 +35,4 @@ const MemorizedMemo: MemoType = memo(function Memo({ deps, render, children }) {
   return render(deps!);
 }, compareProps);
 
-export default MemorizedMemo;
+export default Memo;
