@@ -1,5 +1,11 @@
 # react-memo-component
 
+## 0.1.2
+
+### Patch Changes
+
+- 6df5046: fix package.json
+
 ## 0.1.1
 
 ### Patch Changes
