@@ -36,6 +36,8 @@ import Memo from "react-memo-component";
 
 You can use hooks inside the render function (if your lint allows), which allows you to further optimize your render structure.
 
+(but this is usually considered as anti-pattern)
+
 ## License
 
 MIT
