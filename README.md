@@ -34,9 +34,10 @@ import Memo from "react-memo-component";
 
 ### Use hooks inside render
 
-You can use hooks inside the render function (if your lint allows), which allows you to further optimize your render structure.
+You can use hooks inside the render function, which allows you to further optimize your render structure.
 
-(but this is usually considered as anti-pattern)
+If your lint complains about it, you can write your render function as `function Comp() {...}`, which fools the lint to 
+see it as a component, but you should know it is not, as it is only a normal function called inside the Memo component.  
 
 ## License
 
