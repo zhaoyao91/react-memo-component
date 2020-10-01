@@ -2,6 +2,10 @@
 
 React memorization with render children pattern.
 
+## Deprecation
+
+Please refer to the successor [@yao-react/react-memo](https://github.com/yao-react/react-memo)
+
 ## Install
 
 ```bash
